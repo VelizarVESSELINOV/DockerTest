@@ -1,6 +1,7 @@
 FROM python
 
-RUN pip install cchardet
+ENV ROW_SIZE 10000000
+
 RUN pip install lasio
 
 ADD main.py /app/

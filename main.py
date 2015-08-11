@@ -1,7 +1,9 @@
-from lasio import LASFile, read, HeaderItem
+from datetime import datetime as dt
+from os import environ
+
+from lasio import HeaderItem, LASFile, read
 from numpy import arange
 from numpy.random import rand
-from datetime import datetime as dt
 
 
 def createFile(size):
@@ -18,7 +20,7 @@ def createFile(size):
 
     return fn
 
-size = 10000000
+size = int(environ['ROW_SIZE'])
 print("Creating file with {} rows".format(size))
 f = createFile(size)
 print("Reading file")
